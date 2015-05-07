@@ -10,7 +10,6 @@ $(function(){
       cost_per_single_ride = 2.75;
   
   $metro_card_calculator.submit(function (event) {
-    event.preventDefault();
 
     var remaining_amount = parseFloat($remaining_amount.val()),
         number_of_rides = parseInt($number_of_rides.val()),
@@ -22,5 +21,7 @@ $(function(){
     $balance_remaining.text(accounting.formatMoney(left_over));
     $result.text(accounting.formatMoney(amount_to_add));
     $more_rides.text(number_of_rides);
+
+    event.preventDefault();
   });
 });
